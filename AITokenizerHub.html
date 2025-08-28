@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tokenizer Hub | Real Token Counter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">AI Tokenizer Hub</h1>
+      <p class="subtitle">Explore real token IDs across major AI models</p>
+    </div>
+
+    <div class="main-card">
+      <div class="models">
+        <div class="model-tab gpt active" data-model="gpt">GPT-4</div>
+        <div class="model-tab claude" data-model="claude">Claude 3</div>
+        <div class="model-tab gemini" data-model="gemini">Gemini 1.5</div>
+        <div class="model-tab grook" data-model="grook">Grook</div>
+      </div>
+
+      <div class="content">
+        <div class="textarea-container">
+          <textarea id="inputText" placeholder="Enter or paste your text here to see real token IDs..."></textarea>
+        </div>
+
+        <div class="note-card">
+          <h4>GPT-style Tokenizer Implementation</h4>
+          <p>This tokenizer provides accurate IDs for common tokens and approximations for less common ones. Examples that match OpenAI's tokenizer:</p>
+          <p>• "Hello world" → [15496, 995]</p>
+          <p>• "tokenizing" → [9478, 278]</p>
+          <p>• "AI" → [38388]</p>
+        </div>
+
+        <div class="buttons">
+          <button id="tokenizeBtn" class="btn btn-primary">Tokenize</button>
+          <button id="clearBtn" class="btn btn-secondary">Clear</button>
+          <button id="exampleBtn" class="btn btn-secondary">Load Example</button>
+        </div>
+
+        <div id="statsContainer" class="stats gpt">
+          <div class="stat">
+            <div class="stat-label">Total Tokens</div>
+            <div id="tokenCount" class="stat-value">0</div>
+            <div id="tokenAvg" class="stat-detail">No text entered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Estimated Cost</div>
+            <div id="tokenCost" class="stat-value">$0.00</div>
+            <div id="costModel" class="stat-detail">Based on GPT-4 Turbo</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Statistics</div>
+            <div id="charCount" class="stat-value">0</div>
+            <div id="wordCount" class="stat-detail">0 words</div>
+          </div>
+        </div>
+
+        <div class="token-section">
+          <div class="token-header">
+            <h3 class="token-title">Token Breakdown</h3>
+            <div class="token-tabs">
+              <div id="textViewTab" class="token-tab active">Text View</div>
+              <div id="idViewTab" class="token-tab">Token IDs</div>
+            </div>
+          </div>
+
+          <div class="token-display">
+            <div id="tokenViewText" class="token-view-text">
+              <div class="empty-state">
+                <div class="empty-icon">⌨️</div>
+                <div>Enter text to see tokenization</div>
+              </div>
+            </div>
+            <div id="tokenViewIds" class="token-view-ids" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 AI Tokenizer Hub by <a href="https://github.com/skartik06" style="color: var(--primary); text-decoration: none;">skartik06</a></p>
+    </div>
+  </div>
+
+  <div class="theme-toggle" id="themeToggle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
